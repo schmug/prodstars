@@ -19,7 +19,7 @@ This document breaks the [ProdStars Specification v1.0](./PRODSTARS-SPEC.md) int
 |---|---|---|---|---|
 | P0-T01 | **Initialize Node.js project** — `npm init`, set `"type": "module"`, configure `tsconfig.json` with strict mode, set up `src/` directory structure. ✅ **DONE** (agent: claude/mark-task-in-progress-aL5tP) | — | must-have | `package.json`, `tsconfig.json`, `src/index.ts` |
 | P0-T02 | **Set up build toolchain** — Configure TypeScript compilation, add `build` and `dev` scripts. No bundler needed (CLI tool). | P0-T01 | must-have | Working `npm run build` producing `dist/` |
-| P0-T03 | **Set up test framework** — Install and configure Vitest (or Jest). Create `tests/` directory with a smoke test. | P0-T01 | must-have | `vitest.config.ts`, passing smoke test |
+| P0-T03 | ✅ **DONE** (agent: claude/mark-task-in-progress-UpX69) · **Set up test framework** — Install and configure Vitest (or Jest). Create `tests/` directory with a smoke test. | P0-T01 | must-have | `vitest.config.ts`, passing smoke test |
 | P0-T04 | **Set up linting** — Configure ESLint + Prettier for TypeScript. | P0-T01 | must-have | `.eslintrc`, `.prettierrc`, passing lint |
 | P0-T05 | **Create CLI entry point** — Set up `bin/pstar` executable entry, wire up `commander` (or `yargs`) for command routing. Register stub commands: `eval`, `init`, `validate`. | P0-T02 | must-have | `npx pstar --help` prints usage |
 | P0-T06 | ✅ **DONE** · **Define core type definitions** — Create TypeScript interfaces/types for: `ProdStarsDocument`, `Domain`, `Check`, `EvalMethod`, `Operator`, `Severity`, `Rating`, `Override`, `CommunityWeights`. | P0-T01 | must-have | `src/types.ts` with all core types |
