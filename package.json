@@ -1,0 +1,33 @@
+{
+  "name": "prodstars",
+  "version": "1.0.0",
+  "description": "An open standard for deployment readiness ratings",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "pstar": "dist/cli.js",
+    "prodstars": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "prodstars",
+    "deployment",
+    "readiness",
+    "security",
+    "scorecard",
+    "devops"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
