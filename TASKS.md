@@ -10,6 +10,7 @@ This document breaks the [ProdStars Specification v1.0](./PRODSTARS-SPEC.md) int
 - **Depends**: Task IDs that must complete first
 - **Tier**: `must-have` | `should-have` | `nice-to-have` (maps to spec §15)
 - **Deliverable**: Concrete output the task produces
+- **Task status updates in this file are manager-only** (implementation agents should not edit `TASKS.md`)
 
 ---
 
@@ -45,7 +46,7 @@ This document breaks the [ProdStars Specification v1.0](./PRODSTARS-SPEC.md) int
 | ID | Task | Depends | Tier | Deliverable |
 |---|---|---|---|---|
 | P2-T01 | ✅ **DONE** (agent: claude/mark-task-in-progress-UXwLc) · **Implement equality operators** — `eq` / `neq` with alias resolution. String comparison. | P0-T06 | must-have | `src/operators/equality.ts`, unit tests |
-| P2-T02 | **Implement numeric comparison operators** — `gt`, `gte`, `lt`, `lte` for numeric values. | P0-T06 | must-have | `src/operators/numeric.ts`, unit tests |
+| P2-T02 | ✅ **DONE** (agent: claude/github-issue-task-tracking-WVKNp) · **Implement numeric comparison operators** — `gt`, `gte`, `lt`, `lte` for numeric values. | P0-T06 | must-have | `src/operators/numeric.ts`, unit tests |
 | P2-T03 | **Implement string operators** — `contains` / `not_contains` (with aliases `includes` / `excludes`). | P0-T06 | must-have | `src/operators/string.ts`, unit tests |
 | P2-T04 | **Implement regex operators** — `matches` / `not_matches` (PCRE-compatible via JS RegExp). | P0-T06 | must-have | `src/operators/regex.ts`, unit tests |
 | P2-T05 | **Implement existence operators** — `exists` / `not_exists`. | P0-T06 | must-have | `src/operators/existence.ts`, unit tests |
@@ -81,7 +82,7 @@ This document breaks the [ProdStars Specification v1.0](./PRODSTARS-SPEC.md) int
 | P4-T05 | **Implement critical check cap** — If any check with `severity: critical` failed, cap the star rating at 1.5 max. Track the uncapped rating separately. | P4-T04 | must-have | `src/scoring/critical-cap.ts`, unit tests |
 | P4-T06 | **Implement domain-level ratings** — Calculate independent star rating per domain using the same formula, scoped to checks within that domain. | P4-T04 | must-have | `src/scoring/domain-ratings.ts`, unit tests |
 | P4-T07 | **Implement risk ranking** — Compute `risk_impact` for each failing check: `(pass_score - fail_score) × resolved_weight × severity_multiplier × domain_weight`. Sort descending. Return top 5. | P4-T03 | must-have | `src/scoring/risk-ranking.ts`, unit tests |
-| P4-T08 | **Implement star label mapping** — Map star rating ranges to labels: 4.5-5.0=Exceptional, 4.0-4.4=Strong, etc. per spec §4.4. | P0-T06 | must-have | `src/scoring/labels.ts`, unit tests |
+| P4-T08 | ✅ **DONE** (agent: claude/mark-task-in-progress-1njJ3) · **Implement star label mapping** — Map star rating ranges to labels: 4.5-5.0=Exceptional, 4.0-4.4=Strong, etc. per spec §4.4. | P0-T06 | must-have | `src/scoring/labels.ts`, unit tests |
 | P4-T09 | **Implement gate check** — Compare computed rating against `minimum_rating`. Return `{ passed: boolean, minimum: number, actual: number }`. | P4-T05 | must-have | `src/scoring/gate.ts`, unit tests |
 | P4-T10 | **Build scoring orchestrator** — Combine all scoring functions. Accept a `ProdStarsDocument` + check results + overrides + community weights. Return a complete `ScoringResult` object. | P4-T01 through P4-T09 | must-have | `src/scoring/index.ts`, integration tests |
 
