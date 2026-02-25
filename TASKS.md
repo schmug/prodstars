@@ -47,9 +47,9 @@ This document breaks the [ProdStars Specification v1.0](./PRODSTARS-SPEC.md) int
 |---|---|---|---|---|
 | P2-T01 | ✅ **DONE** (agent: claude/mark-task-in-progress-UXwLc) · **Implement equality operators** — `eq` / `neq` with alias resolution. String comparison. | P0-T06 | must-have | `src/operators/equality.ts`, unit tests |
 | P2-T02 | ✅ **DONE** (agent: claude/github-issue-task-tracking-WVKNp) · **Implement numeric comparison operators** — `gt`, `gte`, `lt`, `lte` for numeric values. | P0-T06 | must-have | `src/operators/numeric.ts`, unit tests |
-| P2-T03 | **Implement string operators** — `contains` / `not_contains` (with aliases `includes` / `excludes`). | P0-T06 | must-have | `src/operators/string.ts`, unit tests |
-| P2-T04 | **Implement regex operators** — `matches` / `not_matches` (PCRE-compatible via JS RegExp). | P0-T06 | must-have | `src/operators/regex.ts`, unit tests |
-| P2-T05 | **Implement existence operators** — `exists` / `not_exists`. | P0-T06 | must-have | `src/operators/existence.ts`, unit tests |
+| P2-T03 | 🔄 **IN PROGRESS** (manager wave-1 dispatch; planned branch: `codex/p2-t03-string-operators`) · **Implement string operators** — `contains` / `not_contains` (with aliases `includes` / `excludes`). | P0-T06 | must-have | `src/operators/string.ts`, unit tests |
+| P2-T04 | 🔄 **IN PROGRESS** (manager wave-1 dispatch; planned branch: `codex/p2-t04-regex-operators`) · **Implement regex operators** — `matches` / `not_matches` (PCRE-compatible via JS RegExp). | P0-T06 | must-have | `src/operators/regex.ts`, unit tests |
+| P2-T05 | 🔄 **IN PROGRESS** (manager wave-1 dispatch; planned branch: `codex/p2-t05-existence-operators`) · **Implement existence operators** — `exists` / `not_exists`. | P0-T06 | must-have | `src/operators/existence.ts`, unit tests |
 | P2-T06 | **Build operator registry** — Central `evaluate(actual, operator, expected)` function that dispatches to the correct operator implementation. Resolve all aliases. | P2-T01, P2-T02, P2-T03, P2-T04, P2-T05 | must-have | `src/operators/index.ts`, unit tests covering all aliases |
 
 ---

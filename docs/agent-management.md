@@ -90,11 +90,11 @@ Handoff format:
 - `P2-T02` from `origin/claude/github-issue-task-tracking-WVKNp`
   - Imported: `src/operators/numeric.ts`, `tests/operators/numeric.test.ts`
   - Ignored: `TASKS.md`
-  - Status: `unverified-local` (tooling not installed)
+  - Status: locally validated (`npm test` pass, 2026-02-25)
 - `P4-T08` from `origin/claude/mark-task-in-progress-1njJ3`
   - Imported: `src/scoring/labels.ts`, `tests/scoring/labels.test.ts`
   - Ignored: `TASKS.md`, `package.json`, `package-lock.json`
-  - Status: `unverified-local` (tooling not installed)
+  - Status: locally validated (`npm test` pass, 2026-02-25)
 
 ### Branch inventory classification (current snapshot)
 
@@ -125,12 +125,9 @@ Independent scoring lane (if review bandwidth permits):
 - `P4-T01` weight resolution
 - `P4-T02` severity multipliers
 
-## Local Validation Constraint (Current)
+## Local Validation Status (Current)
 
-`npm test` currently fails locally because `vitest` is not installed in this checkout (`sh: vitest: command not found`).
+Local dependencies are installed on the manager branch and `npm test` passes.
 
-Until dependencies are installed, manager validation is limited to:
-
-- scope review
-- merge-base diff review
-- API/type consistency inspection
+- Command: `npm test`
+- Result: `5` test files passed, `178` tests passed (includes recovered `P2-T02` and `P4-T08`)
